@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Vector;
 
@@ -12,41 +13,41 @@ import bean.Views.VentaView;
 
 public interface TDAManejoDatos extends Remote{
 	
-	public Cliente buscarCliente(int dni);
+	public Cliente buscarCliente(int dni)  throws RemoteException;;
 	
 	public int altaCliente(int dni, String nombre, int telefono, String mail);
 	
-	public int bajaCliente(int dni);
+	public int bajaCliente(int dni)  throws RemoteException;;
 	
-	public ProductoView getProductoPorCodigo(int codigo);
+	public ProductoView getProductoPorCodigo(int codigo) throws RemoteException;;
 	
-	public void grabarAlojamiento(String descripcion, String fechaDesde,String fechaHasta, String nombre, float precio, String ubicacion);
+	public void grabarAlojamiento(String descripcion, String fechaDesde,String fechaHasta, String nombre, float precio, String ubicacion) throws RemoteException;;
 	
-	public void grabarPasaje(String descripcion, String fecha, String aerolinea, String origen, String destino, float precio);
+	public void grabarPasaje(String descripcion, String fecha, String aerolinea, String origen, String destino, float precio) throws RemoteException;;
 	
-	public void grabarVisita(String descripcion, String fecha, String nombre,String ubicacion,float precio);
+	public void grabarVisita(String descripcion, String fecha, String nombre,String ubicacion,float precio) throws RemoteException;;
 	
-	public void grabarPaquete(PaqueteView paqueteVw);
+	public void grabarPaquete(PaqueteView paqueteVw) throws RemoteException;;
 	
-	public void cargaInicial();
+	public void cargaInicial() throws RemoteException;;
 	
-	public List<Cliente> getClientes();
+	public List<Cliente> getClientes() throws RemoteException;;
 	
-	public void addCliente(Cliente cliente);
+	public void addCliente(Cliente cliente) throws RemoteException;;
 	
-	public int VincularClienteAVenta(int dni);
+	public int VincularClienteAVenta(int dni) throws RemoteException;;
 	
-	public void agregarProducto(int codproducto, int cant);
+	public void agregarProducto(int codproducto, int cant) throws RemoteException;;
 	
-	public VentaView getVentaView();
+	public VentaView getVentaView() throws RemoteException;;
 	
-	public ClienteView getClienteView();
+	public ClienteView getClienteView() throws RemoteException;;
 	
-	public Vector getItemVentaVector();
+	public Vector getItemVentaVector() throws RemoteException;;
 	
-	public void grabarVenta();
+	public void grabarVenta() throws RemoteException;;
 	
-	public Object[][] getVentas();
+	public Object[][] getVentas() throws RemoteException;;
 		
-	public Object[][] getProductos();
+	public Object[][] getProductos() throws RemoteException;;
 }
