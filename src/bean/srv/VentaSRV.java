@@ -1,7 +1,6 @@
 package bean.srv;
 
-import java.util.Vector;
-
+import java.util.List;
 import bean.Ventas;
 import bean.dao.HibernateVentaDAO;;
 
@@ -17,7 +16,7 @@ public class VentaSRV {
 		dao.grabarVenta(vta);
 	}
 	
-	public Vector<Ventas> obtenerVentas(){
+	public List<Ventas> obtenerVentas(){
 		return dao.obtenerVentas();
 	}
 }
