@@ -53,18 +53,17 @@ public class HibernateProductoDAO {
 	
 	public List<Productos> getProductos(){       
 	    try
-	    {
-	    	Session session = sf.openSession();
+	    {	    	
+	    	Session session = sf.getCurrentSession();
 			session.beginTransaction();
 			CriteriaBuilder cb = session.getCriteriaBuilder();
 			CriteriaQuery<Productos> cq = cb.createQuery(Productos.class);
 			Root<Productos> matRoot = cq.from(Productos.class);
 			cq.select(matRoot);
 			List<Productos> result = session.createQuery(cq).getResultList();
-			System.out.println(result.size());
-			session.getTransaction().commit();
+			session.getTransaction().commit();			
 			return result;	       
-	    } catch (Exception e) {
+	    } catch (Exception e) {	    	
 	    	e.printStackTrace();
 	    }
 		return null;

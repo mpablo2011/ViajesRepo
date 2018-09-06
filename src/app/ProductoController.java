@@ -129,11 +129,11 @@ public class ProductoController {
 		
 		ProductoSRV srv = new ProductoSRV();
 		List<Productos> productos = srv.getProductos();
-		
+		System.out.println("Obtuvo OK");
 		for(Productos p : productos) {
 			vector.add(p.ProductoToVector());
 		}
-		
+		System.out.println("LLeno el vector");
 		return vector;		
 	}
 }
