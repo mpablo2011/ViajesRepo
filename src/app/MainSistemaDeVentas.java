@@ -140,4 +140,18 @@ public class MainSistemaDeVentas {
 		ProductoController.getInstancia().grabarPaquete(paqueteVw);
 	}	
 	//FIN ABM PRODUCTO
+	
+	//INICIO REPORTING
+	public Object[][] getVentas()
+	{
+		//VentaController.getInstancia().getVentas();
+		return null;
+	}
+	
+	public Object[][] getProductos()
+	{
+		//ProductoController.getInstancia().getProductos();
+		return null;
+	}
+	//FIN REPORTING
 }
