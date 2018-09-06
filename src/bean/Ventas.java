@@ -2,6 +2,8 @@ package bean;
 
 import java.util.ArrayList;
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -89,6 +91,18 @@ public class Ventas implements Serializable{
 		for(ItemVenta i : this.itemsVenta)
 			vector.add(i.itemToVector());
 
+		return vector;
+	}
+	
+	public Vector<String> ventaToVector() {
+		Vector<String> vector=new Vector<String>();
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		
+		vector.add(Integer.toString(this.getIdVenta()));
+		vector.add(Integer.toString(this.getCliente().getDni()));
+		vector.add(this.getCliente().getNombre());
+		vector.add(df.format(this.getFechaVenta()));
+		vector.add(String.valueOf(this.getPrecioTotal()));
 		return vector;
 	}
 }
