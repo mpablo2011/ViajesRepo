@@ -107,14 +107,25 @@ public class VentaController {
 	public Vector<Vector<String>> obtenerVentas() 
 	{
 		Vector<Vector<String>> VentasVector = new Vector<Vector<String>>();
-		VentaSRV srv = new VentaSRV();
-		List<Ventas> ventas = srv.obtenerVentas();
-		
-		for(Ventas v : ventas) {
-			VentasVector.add(v.ventaToVector());
+		try
+		{
+			VentaSRV srv = new VentaSRV();
+			System.out.println("llegue al obtenerventas");
+			List<Ventas> ventas = srv.obtenerVentas();
+			System.out.println("ejecute el query" + ventas.size());
+			for(Ventas v : ventas) {
+				VentasVector.add(v.ventaToVector());
+			}
+			return VentasVector;
 		}
-		
-		return VentasVector;
-		
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
+		
+	
+		
+	
 }

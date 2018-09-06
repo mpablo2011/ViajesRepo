@@ -61,6 +61,7 @@ public class HibernateProductoDAO {
 			Root<Productos> matRoot = cq.from(Productos.class);
 			cq.select(matRoot);
 			List<Productos> result = session.createQuery(cq).getResultList();
+			System.out.println(result.size());
 			session.getTransaction().commit();
 			return result;	       
 	    } catch (Exception e) {
