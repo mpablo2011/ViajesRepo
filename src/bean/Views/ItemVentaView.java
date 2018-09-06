@@ -1,9 +1,13 @@
 package bean.Views;
 
-import antlr.collections.impl.Vector;
+import java.io.Serializable;
 
-public class ItemVentaView {
+public class ItemVentaView implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int codigoProducto;
 	String descripcion;
 	int cantidad;

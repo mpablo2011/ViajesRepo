@@ -25,7 +25,7 @@ public class MainSistemaDeVentas {
 	
 	private MainSistemaDeVentas() {
 		clientes = new ArrayList<Cliente>();
-		productos = new ArrayList<Productos>();
+		productos = new ArrayList<Productos>();		
 	}
 	
 	public void cargaInicial()
