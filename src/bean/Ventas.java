@@ -82,9 +82,9 @@ public class Ventas implements Serializable{
 		this.fechaVenta = fechaVenta;
 	}
 	
-	public Vector gerProductosVector() 
+	public Vector<Vector<String>> getProductosVector() 
 	{
-		Vector vector=new Vector();
+		Vector<Vector<String>> vector=new Vector<Vector<String>>();
 		
 		for(ItemVenta i : this.itemsVenta)
 			vector.add(i.itemToVector());

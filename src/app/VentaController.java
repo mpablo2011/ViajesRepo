@@ -89,10 +89,10 @@ public class VentaController {
 		return c;
 	}
 	
-	public Vector getItemVentaVector()
+	public Vector<Vector<String>> getItemVentaVector()
 	{
-		Vector vector=new Vector();
-		vector = this.venta.gerProductosVector();
+		Vector<Vector<String>> vector=new Vector<Vector<String>>();
+		vector = this.venta.getProductosVector();
 		return vector;
 		
 		
