@@ -1,6 +1,7 @@
 package bean;
 
 import java.io.Serializable;
+import java.util.Vector;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,5 +55,13 @@ public abstract class Productos implements Serializable {
 	public ProductoView getView()
 	{
 		return new ProductoView(this.codigoProducto,this.descripcion);
+	}
+	
+	public Vector<String> itemToVector() {
+		Vector<String> vector=new Vector<String>();
+		vector.add(String.valueOf(this.codigoProducto));
+		vector.add(this.descripcion);
+		vector.add(String.valueOf(this.getPrecio()));
+		return vector;
 	}
 }

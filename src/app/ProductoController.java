@@ -123,22 +123,17 @@ public class ProductoController {
 		srv.grabarProducto(new PaqueteTuristico(paqueteVw.getDescripcion(),paqueteVw.getDescuento(),lista));
 	}				
 	
-	public Vector<ProductoView> obtenerProductosView() 
+	public Vector<Vector<String>> obtenerProductosView() 
 	{
-		Vector<ProductoView> ProductosViewVector = new Vector<ProductoView>();
-		ProductoView pv = new ProductoView();
+		Vector<Vector<String>> vector = new Vector<Vector<String>>();
+		
 		ProductoSRV srv = new ProductoSRV();
 		List<Productos> productos = srv.getProductos();
 		
 		for(Productos p : productos) {
-			pv.setCodigoProducto(p.getCodigoProducto());
-			pv.setDescripcion(p.getDescripcion());
-			pv.setPrecio(p.getPrecio());
-			
-			ProductosViewVector.add(pv);
+			vector.add(p.itemToVector());
 		}
 		
-		return ProductosViewVector;
-		
+		return vector;		
 	}
 }
