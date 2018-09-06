@@ -1,12 +1,15 @@
 package bean.dao;
 
-import java.awt.List;
-import java.util.Vector;
+import java.util.List;
+
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import bean.Productos;
 import bean.Ventas;
 import hbt.HibernateUtil;
 
@@ -39,14 +42,18 @@ public class HibernateVentaDAO {
 		}			
 	}
 	
-	@SuppressWarnings("deprecation")
-	public Vector<Ventas> obtenerVentas(){       
+	public List<Ventas> obtenerVentas(){       
 	    try
 	    {
-			Session session = sf.openSession();
+	    	Session session = sf.getCurrentSession();
 			session.beginTransaction();
-	        return (Vector<Ventas>) session.createCriteria(Ventas.class).list();
-	        
+			CriteriaBuilder cb = session.getCriteriaBuilder();
+			CriteriaQuery<Ventas> cq = cb.createQuery(Ventas.class);
+			Root<Ventas> matRoot = cq.from(Ventas.class);
+			cq.select(matRoot);
+			List<Ventas> result = session.createQuery(cq).getResultList();
+			session.getTransaction().commit();
+			return result;	       
 	    } catch (Exception e) {
 	    	e.printStackTrace();
 	    }
