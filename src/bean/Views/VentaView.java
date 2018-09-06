@@ -1,6 +1,12 @@
 package bean.Views;
 
-public class VentaView {
+import java.io.Serializable;
+
+public class VentaView implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private float totalVenta;
 
 	public float getTotalVenta() {

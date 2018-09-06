@@ -1,6 +1,12 @@
 package bean.Views;
 
-public class ClienteView {
+import java.io.Serializable;
+
+public class ClienteView implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String Nombre;
 	int dni;
 

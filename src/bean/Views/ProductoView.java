@@ -1,6 +1,12 @@
 package bean.Views;
 
-public class ProductoView {
+import java.io.Serializable;
+
+public class ProductoView implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int codigoProducto;
 	private String descripcion;
 	private boolean esPaquete;

@@ -1,10 +1,15 @@
 package bean.Views;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class PaqueteView {
+public class PaqueteView implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<ProductoView> productos;
 	private String descripcion;
 	private int descuento;
