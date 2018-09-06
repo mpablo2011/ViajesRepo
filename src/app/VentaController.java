@@ -1,6 +1,6 @@
 package app;
 
-import java.awt.List;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Vector;
@@ -104,9 +104,15 @@ public class VentaController {
 		srv.grabarVenta(this.venta);
 	}
 	
-	public Vector<Ventas> obtenerVentas() 
+	public Vector<VentaView> obtenerVentasView() 
 	{
+		Vector<VentaView> VentasView = new Vector<VentaView>();
 		VentaSRV srv = new VentaSRV();
-		return srv.obtenerVentas();
+		List<Ventas> ventas = srv.obtenerVentas();
+		
+		
+		return VentasView;
+		
+		
 	}
 }
