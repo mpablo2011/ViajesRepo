@@ -1,5 +1,8 @@
 package bean.dao;
 
+import java.awt.List;
+import java.util.Vector;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -34,5 +37,19 @@ public class HibernateVentaDAO {
 		{
 			e.printStackTrace();
 		}			
+	}
+	
+	@SuppressWarnings("deprecation")
+	public Vector<Ventas> obtenerVentas(){       
+	    try
+	    {
+			Session session = sf.openSession();
+			session.beginTransaction();
+	        return (Vector<Ventas>) session.createCriteria(Ventas.class).list();
+	        
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    }
+		return null;
 	}
 }

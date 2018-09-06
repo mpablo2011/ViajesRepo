@@ -1,7 +1,45 @@
 package bean.Views;
 
+import java.util.Date;
+
 public class VentaView {
 	private float totalVenta;
+	private int idVenta;
+	private Date fechaVenta;
+	private int dni;
+	private String NombreCliente;
+
+	public int getIdVenta() {
+		return idVenta;
+	}
+
+	public void setIdVenta(int idVenta) {
+		this.idVenta = idVenta;
+	}
+
+	public Date getFechaVenta() {
+		return fechaVenta;
+	}
+
+	public void setFechaVenta(Date fechaVenta) {
+		this.fechaVenta = fechaVenta;
+	}
+
+	public int getDni() {
+		return dni;
+	}
+
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
+
+	public String getNombreCliente() {
+		return NombreCliente;
+	}
+
+	public void setNombreCliente(String nombreCliente) {
+		NombreCliente = nombreCliente;
+	}
 
 	public float getTotalVenta() {
 		return totalVenta;

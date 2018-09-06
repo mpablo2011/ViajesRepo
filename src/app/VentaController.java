@@ -103,4 +103,10 @@ public class VentaController {
 		VentaSRV srv = new VentaSRV();
 		srv.grabarVenta(this.venta);
 	}
+	
+	public Vector<Ventas> obtenerVentas() 
+	{
+		VentaSRV srv = new VentaSRV();
+		return srv.obtenerVentas();
+	}
 }
