@@ -54,7 +54,7 @@ public class HibernateProductoDAO {
 	public List<Productos> getProductos(){       
 	    try
 	    {
-	    	Session session = sf.getCurrentSession();
+	    	Session session = sf.openSession();
 			session.beginTransaction();
 			CriteriaBuilder cb = session.getCriteriaBuilder();
 			CriteriaQuery<Productos> cq = cb.createQuery(Productos.class);

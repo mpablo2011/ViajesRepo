@@ -45,7 +45,7 @@ public class HibernateVentaDAO {
 	public List<Ventas> obtenerVentas(){       
 	    try
 	    {
-	    	Session session = sf.getCurrentSession();
+	    	Session session = sf.openSession();
 			session.beginTransaction();
 			CriteriaBuilder cb = session.getCriteriaBuilder();
 			CriteriaQuery<Ventas> cq = cb.createQuery(Ventas.class);
