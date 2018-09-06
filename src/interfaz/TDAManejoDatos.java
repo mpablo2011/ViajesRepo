@@ -43,7 +43,7 @@ public interface TDAManejoDatos extends Remote{
 	
 	public ClienteView getClienteView() throws RemoteException;
 	
-	public Vector getItemVentaVector() throws RemoteException;
+	public Vector<Vector<String>> getItemVentaVector() throws RemoteException;
 	
 	public void grabarVenta() throws RemoteException;
 	
