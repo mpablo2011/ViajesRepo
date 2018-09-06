@@ -1,8 +1,13 @@
 package bean.Views;
 
 import java.util.Date;
+import java.io.Serializable;
 
-public class VentaView {
+public class VentaView implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private float totalVenta;
 	private int idVenta;
 	private Date fechaVenta;
