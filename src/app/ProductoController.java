@@ -3,15 +3,19 @@ package app;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import bean.Alojamientos;
 import bean.PaqueteTuristico;
 import bean.Pasajes;
 import bean.Productos;
+import bean.Ventas;
 import bean.VisitasTuristicas;
 import bean.Views.PaqueteView;
 import bean.Views.ProductoView;
+import bean.Views.VentaView;
 import bean.srv.ProductoSRV;
+import bean.srv.VentaSRV;
 
 public class ProductoController {
 	private static ProductoController instancia;
@@ -118,4 +122,23 @@ public class ProductoController {
 		
 		srv.grabarProducto(new PaqueteTuristico(paqueteVw.getDescripcion(),paqueteVw.getDescuento(),lista));
 	}				
+	
+	public Vector<ProductoView> obtenerProductosView() 
+	{
+		Vector<ProductoView> ProductosViewVector = new Vector<ProductoView>();
+		ProductoView pv = new ProductoView();
+		ProductoSRV srv = new ProductoSRV();
+		List<Productos> productos = srv.getProductos();
+		
+		for(Productos p : productos) {
+			pv.setCodigoProducto(p.getCodigoProducto());
+			pv.setDescripcion(p.getDescripcion());
+			pv.setPrecio(p.getPrecio());
+			
+			ProductosViewVector.add(pv);
+		}
+		
+		return ProductosViewVector;
+		
+	}
 }

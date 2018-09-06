@@ -9,7 +9,20 @@ public class ProductoView implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int codigoProducto;
 	private String descripcion;
+	private float precio;
+	
+	public float getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
+
 	private boolean esPaquete;
+	
+	public ProductoView() {
+	}
 	
 	public ProductoView(int codigo, String descripcion) {
 		this.setCodigoProducto(codigo);
