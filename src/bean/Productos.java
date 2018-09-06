@@ -57,7 +57,7 @@ public abstract class Productos implements Serializable {
 		return new ProductoView(this.codigoProducto,this.descripcion);
 	}
 	
-	public Vector<String> itemToVector() {
+	public Vector<String> ProductoToVector() {
 		Vector<String> vector=new Vector<String>();
 		vector.add(String.valueOf(this.codigoProducto));
 		vector.add(this.descripcion);

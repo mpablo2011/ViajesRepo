@@ -123,7 +123,7 @@ public class ProductoController {
 		srv.grabarProducto(new PaqueteTuristico(paqueteVw.getDescripcion(),paqueteVw.getDescuento(),lista));
 	}				
 	
-	public Vector<Vector<String>> obtenerProductosView() 
+	public Vector<Vector<String>> obtenerProductos() 
 	{
 		Vector<Vector<String>> vector = new Vector<Vector<String>>();
 		
@@ -131,7 +131,7 @@ public class ProductoController {
 		List<Productos> productos = srv.getProductos();
 		
 		for(Productos p : productos) {
-			vector.add(p.itemToVector());
+			vector.add(p.ProductoToVector());
 		}
 		
 		return vector;		
