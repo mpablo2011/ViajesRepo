@@ -106,13 +106,22 @@ public class VentaController {
 	
 	public Vector<VentaView> obtenerVentasView() 
 	{
-		Vector<VentaView> VentasView = new Vector<VentaView>();
+		Vector<VentaView> VentasViewVector = new Vector<VentaView>();
+		VentaView vw = new VentaView();
 		VentaSRV srv = new VentaSRV();
 		List<Ventas> ventas = srv.obtenerVentas();
 		
+		for(Ventas v : ventas) {
+			vw.setIdVenta(v.getIdVenta());
+			vw.setDni(v.getCliente().getDni());
+			vw.setNombreCliente(v.getCliente().getNombre());
+			vw.setFechaVenta(v.getFechaVenta());
+			vw.setTotalVenta(v.getPrecioTotal());
+			
+			VentasViewVector.add(vw);
+		}
 		
-		return VentasView;
-		
+		return VentasViewVector;
 		
 	}
 }
