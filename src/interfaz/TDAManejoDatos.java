@@ -45,6 +45,8 @@ public interface TDAManejoDatos extends Remote{
 	public Vector getItemVentaVector();
 	
 	public void grabarVenta();
-
-
+	
+	public Object[][] getVentas();
+		
+	public Object[][] getProductos();
 }
